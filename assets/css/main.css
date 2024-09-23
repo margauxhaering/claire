@@ -136,7 +136,7 @@ input, select, textarea {
 
 	body, input, select, textarea {
 		color: #ffffff;
-		font-family: "Source Sans Pro", sans-serif;
+		font-family: "Montserrat", sans-serif;
 		font-weight: 300;
 		font-size: 1rem;
 		line-height: 1.65;
@@ -1581,11 +1581,11 @@ input, select, textarea {
 				}
 
 				#main article .close:hover:before {
-					background-color: #F2E7D3;
+					background-color: #F0E8E3;
 				}
 
 				#main article .close:active:before {
-					background-color: #F2E7D3;
+					background-color: #F0E8E3;
 				}
 
 		@media screen and (max-width: 736px) {
