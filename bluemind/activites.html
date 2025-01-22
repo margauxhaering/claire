@@ -1,0 +1,148 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Blue Mind by Claire Dufour</title>
+		<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper" class="fade-in">
+
+				<!-- Intro -->
+					<div id="intro">
+						<video autoplay muted loop playsinline>
+							<source src="bluemind/images/vid.mp4" type="video/mp4">
+							Your browser does not support the video tag.
+						</video>
+						<img src="bluemind/images/logo1.png" alt="Blue Mind Logo" style="max-width: 100%; height: auto;">
+						<p></p>
+						<a href="#nav" class="button icon solid solo fa-arrow-down scrolly">Continue</a>
+					</div>
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links activities-nav">
+
+							<li class="active"><a>Apnée</a></li>
+							<li><a>Snorkelling</a></li>
+							<li><a>Formule Sun</a></li>
+							<li><a>Formule Explore</a></li>
+							<li><a>Stage</a></li>
+							<li><a href='index.html' >Accueil</a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="+tel:+33670634585" class="icon brands fa-whatsapp"><span class="label">Whatsapp</span></a></li>
+							<li><a href="https://www.instagram.com/bluemind.clairedufour/" class="icon brands fa-instagram"><span class="label">Facebook</span></a></li>
+						</ul>
+					</nav>
+				<!-- Main -->
+					<div id="main">
+
+					</div>
+
+
+				<!-- Copyright -->
+					<div id="copyright">
+						Design: <a href="https://www.margauxhaering.fr">margaux haering</a>
+					</div>
+								</div>
+
+
+		<!-- Scripts -->
+		<script>
+
+		document.addEventListener("DOMContentLoaded", () => {
+			let navLinks;
+
+			if (window.innerWidth < 500) {
+			    navLinks = document.querySelectorAll("#navPanel nav .links li");
+					const navPanel = document.querySelector("#navPanel");
+					navLinks.forEach(link => {
+					    link.addEventListener("click", () => {
+					        document.body.classList.remove("is-navPanel-visible");
+
+					    });
+					});
+			} else {
+			    navLinks = document.querySelectorAll("#nav .links li");
+			}
+    const mainContent = document.getElementById("main");
+
+    const contentMap = {
+        "Apnée": `
+				<article class="post featured" >
+					<header class="major">
+						<h2><a>Apnee</a></h2>
+						<p>De l'initiation au pratiquants <br> Toutes les activités se déroulent en petit groupe.</p>
+					</header>
+				</article>
+        `,
+        "Snorkelling": `
+				<article class="post featured" >
+					<header class="major">
+						<h2><a>Snorkelling</a></h2>
+						<p>De l'initiation au pratiquants <br> Toutes les activités se déroulent en petit groupe.</p>
+					</header>
+				</article>
+        `,
+        "Formule Sun": `
+				<article class="post featured" >
+					<header class="major">
+						<h2><a>Formule Sunrise/Sunset</a></h2>
+						<p>De l'initiation au pratiquants <br> Toutes les activités se déroulent en petit groupe.</p>
+					</header>
+				</article>
+        `,
+        "Formule Explore": `
+				<article class="post featured" >
+					<header class="major">
+						<h2><a>Formule Explore</a></h2>
+						<p>De l'initiation au pratiquants <br> Toutes les activités se déroulent en petit groupe.</p>
+					</header>
+				</article>
+        `,
+        "Stage": `
+				<article class="post featured" >
+					<header class="major">
+						<h2><a>Nos stages</a></h2>
+						<p>De l'initiation au pratiquants <br> Toutes les activités se déroulent en petit groupe.</p>
+					</header>
+				</article>
+        `
+    };
+		function setActiveTab(link) {
+         navLinks.forEach(nav => nav.classList.remove("active"));
+         link.classList.add("active");
+         const linkText = link.textContent.trim();
+         mainContent.innerHTML = contentMap[linkText] || "<p>A venir</p>";
+     }
+
+     if (navLinks.length > 0) {
+         setActiveTab(navLinks[0]);
+     }
+
+     navLinks.forEach(link => {
+         link.addEventListener("click", () => setActiveTab(link));
+     });
+
+
+
+ });
+
+</script>
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

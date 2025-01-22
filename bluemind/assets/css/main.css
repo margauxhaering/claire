@@ -2713,8 +2713,9 @@ input, select, textarea {
 
 		.image.fit {
 			display: block;
-			margin: 2.5rem 0;
-			width: 100%;
+			margin: 1.5rem 1.5rem 1.5rem 5rem;
+			width: 65%;
+
 		}
 
 			.image.fit:first-child {
@@ -3398,18 +3399,25 @@ input, select, textarea {
 		-moz-transition: opacity 1s ease, -moz-transform 1s ease;
 		-webkit-transition: opacity 1s ease, -webkit-transform 1s ease;
 		-ms-transition: opacity 1s ease, -ms-transform 1s ease;
-		transition: opacity 1s ease, transform 1s ease;
+		transition: opacity 1s ease, transform 3600s ease;
 		position: relative;
 		cursor: default;
 		text-align: center;
-		background-image: url("../../images/ocean3.jpg");
-		background-size: 100% auto;
-		background-position: center 30%;
-		background-repeat: no-repeat;
-		background-attachment: scroll;
 		height: 100vh;
 
 	}
+	#intro video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1; /* Push behind content */
+  object-fit: cover; /* Ensures the video covers the entire area */
+}
 
 		#intro input, #intro select, #intro textarea {
 			color: #ffffff;
@@ -3746,7 +3754,7 @@ input, select, textarea {
 		background-color: #FFF0D8;
 		position: relative;
 		margin: 0 auto;
-		width: calc(100% - 4rem);
+		width: 100vw;
 		max-width: 72rem;
 		z-index: 2;
 	}
@@ -3766,7 +3774,7 @@ input, select, textarea {
 		}
 
 		#main > .post {
-			padding: 8rem 8rem 6rem 8rem ;
+			padding: 2rem 4rem 3rem 4rem ;
 		}
 
 			#main > .post header.major > .date {
@@ -3786,7 +3794,7 @@ input, select, textarea {
 			@media screen and (max-width: 1280px) {
 
 				#main > .post {
-					padding: 6rem 4rem 4rem 4rem ;
+					padding: 4rem 2rem 2rem 2rem ;
 				}
 
 			}
@@ -3845,7 +3853,7 @@ input, select, textarea {
 			}
 
 			#main > .posts > * {
-				padding: 4rem;
+				padding: 2rem;
 				width: 50%;
 			}
 
@@ -3868,6 +3876,50 @@ input, select, textarea {
 				#main > .posts > article:nth-child(-n + 2) {
 					border-top-width: 0;
 				}
+
+
+
+
+				#popup {
+   height: 60vh;
+   width: 60%;
+   position: fixed;
+   top: 20%;
+   left: 20%;
+   background-color: #fff;
+   z-index: 9999;
+   opacity: 0;
+   visibility: hidden;
+   transition: all .75s;
+   text-align: center;
+   color: #333;
+   transform: scale(0.25);
+}
+
+#popup:target {
+   opacity: 1;
+   visibility: visible;
+   transform: scale(1);
+   transition: all .75s;
+}
+
+#popup:target ~ .content {
+   filter: blur(50px);
+   pointer-events: none;
+   transition: filter 0.75s;
+}
+
+
+#popup a {
+   position: absolute;
+   height: 30px;
+   width: 30px;
+   border-radius: 100px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-size: 32px;
+}
 
 			@media screen and (max-width: 980px) {
 
@@ -3910,7 +3962,7 @@ input, select, textarea {
 				}
 
 				#main > .posts > article .image {
-					max-width: 25rem;
+					max-width: 15rem;
 					margin-left: auto;
 					margin-right: auto;
 				}
