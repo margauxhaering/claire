@@ -69,7 +69,7 @@ input, select, textarea {
 }
 
 /* Basic */
-.gallery {
+.gallery, .gallery2 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;
@@ -271,6 +271,13 @@ input, select, textarea {
 		margin: 0 0.25rem;
 		padding: 0.25rem 0.65rem;
 	}
+
+
+.activ{
+	font-size: 0.8rem;
+	line-height: normal;
+	text-align: justify;
+}
 
 	pre {
 		-webkit-overflow-scrolling: touch;
@@ -3440,9 +3447,11 @@ input, select, textarea {
   min-height: 100%;
   width: auto;
   height: auto;
-  z-index: -1; /* Push behind content */
-  object-fit: cover; /* Ensures the video covers the entire area */
+  z-index: -1;
+  object-fit: cover;
 }
+
+
 
 		#intro input, #intro select, #intro textarea {
 			color: #ffffff;
