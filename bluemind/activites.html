@@ -29,7 +29,7 @@
 					<nav id="nav">
 						<ul class="links activities-nav">
 
-							<li class="active"><a>Apnée</a></li>
+							<li><a>Apnée</a></li>
 							<li><a>Snorkelling</a></li>
 							<li><a>Formule Sun</a></li>
 							<li><a>Formule Explore</a></li>
@@ -59,23 +59,13 @@
 		<script>
 
 		document.addEventListener("DOMContentLoaded", () => {
-			let navLinks;
+		    const urlParams = new URLSearchParams(window.location.search);
+		    const activity = urlParams.get("activity");
 
-			if (window.innerWidth < 500) {
-			    navLinks = document.querySelectorAll("#navPanel nav .links li");
-					const navPanel = document.querySelector("#navPanel");
-					navLinks.forEach(link => {
-					    link.addEventListener("click", () => {
-					        document.body.classList.remove("is-navPanel-visible");
+		    const navLinks = document.querySelectorAll(".activities-nav li");
+		    const mainContent = document.getElementById("main");
 
-					    });
-					});
-			} else {
-			    navLinks = document.querySelectorAll("#nav .links li");
-			}
-    const mainContent = document.getElementById("main");
-
-    const contentMap = {
+		    const contentMap = {
         "Apnée": `
 				<article class="post featured" >
 					<header class="major">
@@ -229,25 +219,37 @@
 				</div>
 
         `
-    };
-		function setActiveTab(link) {
-         navLinks.forEach(nav => nav.classList.remove("active"));
-         link.classList.add("active");
-         const linkText = link.textContent.trim();
-         mainContent.innerHTML = contentMap[linkText] || "<p>A venir</p>";
-     }
+			};
 
-     if (navLinks.length > 0) {
-         setActiveTab(navLinks[0]);
-     }
+	     function setActiveTab(activityName) {
+	         let isSet = false;
 
-     navLinks.forEach(link => {
-         link.addEventListener("click", () => setActiveTab(link));
-     });
+	         navLinks.forEach(link => {
+	             link.classList.remove("active");
+	             if (link.textContent.trim() === activityName) {
+	                 link.classList.add("active");
+	                 isSet = true;
+	             }
+	         });
 
+	         if (isSet && contentMap[activityName]) {
+	             mainContent.innerHTML = contentMap[activityName];
+	         }
+	     }
 
-
- });
+	     if (activity) {
+	         setActiveTab(activity);
+	     } else {
+	         setActiveTab(navLinks[0].textContent.trim());
+	     }
+	     navLinks.forEach(link => {
+	         link.addEventListener("click", () => {
+	             const selectedActivity = link.textContent.trim();
+	             setActiveTab(selectedActivity);
+	             history.replaceState(null, "", `?activity=${selectedActivity}`);
+	         });
+	     });
+	 });
 
 </script>
 			<script src="assets/js/jquery.min.js"></script>
