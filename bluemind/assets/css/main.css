@@ -169,9 +169,9 @@ input, select, textarea {
 	}
 
 	body, input, select, textarea {
-		font-family: "Merriweather", Georgia, serif;
-		font-weight: 300;
-		font-size: 1rem;
+		font-family: 'Cormorant Garamond', serif;
+		font-weight: 400;
+		font-size: 2em;
 		line-height: 2.375;
 	}
 
@@ -202,8 +202,8 @@ input, select, textarea {
 	}
 
 	h1, h2, h3, h4, h5, h6 {
-		font-family: "Source Sans Pro", Helvetica, sans-serif;
-		font-weight: 900;
+		font-family: 'Cormorant Garamond', serif;
+		font-weight: 800;
 		line-height: 1.5;
 		letter-spacing: 0.075em;
 		text-transform: uppercase;
@@ -350,6 +350,132 @@ input, select, textarea {
 		border-bottom-color: #eeeeee;
 	}
 
+
+
+	/* Main profile container */
+	        .profile-container {
+	            width: 80%;
+	            max-width: 800px;
+	            margin: 20px auto;
+	          background-color: rgba(250,250,250, 0.7);
+	            border: 1px solid #dbdbdb;
+	            border-radius: 10px;
+	            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	            padding: 20px;
+	        }
+
+	        .profile-name a{
+	          font-size:18px;
+	          color:black;
+	        }
+	        /* Profile header section */
+	        .profile-header {
+	            display: flex;
+	            align-items: center;
+	            padding-bottom: 20px;
+	            border-bottom: 1px solid #dbdbdb;
+	            margin-bottom: 20px;
+	        }
+
+	        .profile-header .profile-pic {
+	            width: 80px;
+	            height: 80px;
+	            border-radius: 50%;
+	            overflow: hidden;
+	            margin-right: 20px;
+	        }
+
+	        .profile-header .profile-pic img {
+	            width: 100%;
+	            height: 100%;
+	            object-fit: cover;
+	        }
+
+	        .profile-header .profile-info {
+	            flex: 1;
+	        }
+
+	        .profile-info .profile-name {
+	            font-size: 20px;
+	            font-weight: bold;
+	            color: #333;
+	        }
+
+	        .profile-info .profile-description {
+	            color: #666;
+	            margin-top: 5px;
+	            font-size: 14px;
+	        }
+
+	        .profile-info .follow-btn {
+	            margin-top: 10px;
+	            padding: 8px 12px;
+	            background-color: #0095f6;
+	            color: #fff;
+	            border: none;
+	            border-radius: 5px;
+	            cursor: pointer;
+	        }
+
+	        /* Grid of posts */
+	        .posts-grid {
+	            display: grid;
+	            grid-template-columns: repeat(3, 1fr);
+	            gap: 10px;
+	        }
+
+	        /* Individual post styling */
+	        .insta-post {
+	            background-color: rgba(250,250,250, 0.8);
+	            border: 1px solid #dbdbdb;
+	            border-radius: 10px;
+	            overflow: hidden;
+	            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	        }
+
+					.insta-post video {
+	            width: 100%;
+	            height: 400px;
+	            object-fit: cover;
+							position: relative;
+							border-radius: 10px;
+	        }
+	        .insta-post img {
+	            width: 100%;
+	            height: 250px;
+	            object-fit: cover;
+	        }
+
+	        .insta-actions {
+	            display: flex;
+	            justify-content: space-between;
+	            align-items: center;
+	            padding-left: 20px;
+							padding-top: 20px;
+							font-size: 16px;
+							font-family: "Source Sans Pro", Helvetica, sans-serif;
+							font-weight: 400;
+							letter-spacing: 0.05em;
+	        }
+
+	        .insta-actions i {
+	            font-size: 20px;
+	            margin-right: 10px;
+	            cursor: pointer;
+	        }
+
+	        .insta-actions .likes {
+	            font-weight: bold;
+	            color: #333;
+	        }
+
+
+
+
+
+
+
+
 /* Row */
 
 	.row {
@@ -438,7 +564,7 @@ input, select, textarea {
 		.row > .col-6 {
 			width: 50%;
 			line-height: 1.3;
-			font-size: 15px;
+			font-size: 18px;
 		}
 
 		.row > .off-6 {
