@@ -3940,11 +3940,11 @@ input, select, textarea {
 	}
 	#intro video {
   position: absolute;
-  top: 50%;
+  top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
   min-width: 100%;
-  min-height: 100%;
+  min-height: 50%;
   width: auto;
   height: auto;
   z-index: -1;
@@ -3955,7 +3955,7 @@ input, select, textarea {
 
 #intro img {
     position: relative;
-    top: -100px;
+    top: -150px;
 }
 		#intro input, #intro select, #intro textarea {
 			color: #ffffff;
